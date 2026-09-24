@@ -173,7 +173,7 @@ export function Navbar() {
 
       <div
         className={cn(
-          "fixed inset-x-0 top-14 bottom-0 z-40 bg-background/95 backdrop-blur-xl transition-all duration-300 ease-in-out md:hidden sm:top-16",
+          "fixed inset-x-0 top-14 bottom-0 z-40 bg-background transition-all duration-300 ease-in-out md:hidden sm:top-16",
           mobileOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-4 opacity-0",
