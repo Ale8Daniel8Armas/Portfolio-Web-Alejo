@@ -64,11 +64,11 @@ export function Contact() {
               </a>
             </div>
 
-            <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-background px-5 py-2.5 text-sm shadow-[0_6px_20px_-12px_oklch(0_0_0/0.35)] ring-1 ring-inset ring-contact-card-border">
+            <div className="mt-8 flex w-full sm:w-auto flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-2xl sm:rounded-full bg-background px-4 sm:px-5 py-3 sm:py-2.5 text-sm shadow-[0_6px_20px_-12px_oklch(0_0_0/0.35)] ring-1 ring-inset ring-contact-card-border">
               <span className="font-semibold text-brand">{t('contact.emailLabel')}</span>
               <a
                 href={`mailto:${EMAIL}`}
-                className="font-medium text-contact-foreground/80 transition-colors hover:text-contact-foreground"
+                className="font-medium text-contact-foreground/80 transition-colors hover:text-contact-foreground break-all text-center"
               >
                 {EMAIL}
               </a>

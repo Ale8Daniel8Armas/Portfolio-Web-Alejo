@@ -80,13 +80,13 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur-lg">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
         <a
           href="#inicio"
           onClick={(e) => handleLinkClick(e, "#inicio")}
           className="transition-opacity hover:opacity-80"
         >
-          <img src={logo} alt="Logo" className="h-12 w-auto" />
+          <img src={logo} alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -114,13 +114,13 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <a
             href="https://github.com/Ale8Daniel8Armas"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="GitHub"
-            className="flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand"
+            className="flex size-8 sm:size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand"
           >
             <Github className="size-[18px]" strokeWidth={1.75} />
           </a>
@@ -128,7 +128,7 @@ export function Navbar() {
             type="button"
             onClick={toggleTheme}
             aria-label="Cambiar tema"
-            className="flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand"
+            className="flex size-8 sm:size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand"
           >
             {isDark ? (
               <Sun className="size-[18px]" strokeWidth={1.75} />
@@ -140,7 +140,7 @@ export function Navbar() {
             type="button"
             onClick={toggleLanguage}
             aria-label="Cambiar idioma"
-            className="flex h-9 items-center justify-center rounded-lg border border-border px-3 text-xs font-semibold tracking-wide text-muted-foreground transition-colors hover:border-brand hover:text-brand"
+            className="flex h-8 sm:h-9 items-center justify-center rounded-lg border border-border px-2.5 sm:px-3 text-xs font-semibold tracking-wide text-muted-foreground transition-colors hover:border-brand hover:text-brand"
           >
             {(i18n.language || 'es').startsWith('es') ? 'EN' : 'ES'}
           </button>
