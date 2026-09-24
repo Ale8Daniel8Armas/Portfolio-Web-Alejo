@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 export function About() {
   const { t } = useTranslation();
 
-  const skills = t("about.skills", { returnObjects: true }) as string[];
+  const rawSkills = t("about.skills", { returnObjects: true });
+  const skills = Array.isArray(rawSkills) ? rawSkills as string[] : [];
 
   const info = [
     { icon: MapPin, label: t("about.info.location"), value: t("about.info.location_value") },

@@ -319,6 +319,8 @@ i18n
     .init({
         resources,
         fallbackLng: 'es',
+        lng: 'es',
+        initImmediate: false,
         interpolation: {
             escapeValue: false
         }

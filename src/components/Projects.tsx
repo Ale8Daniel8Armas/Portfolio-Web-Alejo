@@ -5,7 +5,8 @@ import type { Project } from "@/i18n";
 
 export function Projects() {
   const { t } = useTranslation();
-  const projects = t("projects.items", { returnObjects: true }) as Project[];
+  const rawProjects = t("projects.items", { returnObjects: true });
+  const projects = Array.isArray(rawProjects) ? rawProjects as Project[] : [];
 
   return (
     <section

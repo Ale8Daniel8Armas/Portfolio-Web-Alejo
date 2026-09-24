@@ -4,7 +4,7 @@ import { t as useTranslation } from "../_libs/react-i18next.mjs";
 import { _ as ArrowUpRight, a as Moon, c as Hourglass, d as Github, f as Download, g as Bot, h as Briefcase, i as Phone, l as GraduationCap, m as Check, n as Sun, o as MapPin, p as Cpu, r as Send, s as Linkedin, t as TestTubeDiagonal, u as Globe, v as ArrowRight } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DZykFG2_.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BTEU1FQ-.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function cn(...inputs) {
@@ -303,7 +303,8 @@ function Hero() {
 var hero2_default = "/assets/hero2-DwkFHh2K.jpeg";
 function About() {
 	const { t } = useTranslation();
-	const skills = t("about.skills", { returnObjects: true });
+	const rawSkills = t("about.skills", { returnObjects: true });
+	const skills = Array.isArray(rawSkills) ? rawSkills : [];
 	const info = [
 		{
 			icon: MapPin,
@@ -597,7 +598,8 @@ function ProjectCard({ project }) {
 }
 function Projects() {
 	const { t } = useTranslation();
-	const projects = t("projects.items", { returnObjects: true });
+	const rawProjects = t("projects.items", { returnObjects: true });
+	const projects = Array.isArray(rawProjects) ? rawProjects : [];
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		id: "proyectos",
 		className: "relative overflow-hidden bg-projects py-20 text-projects-foreground sm:py-28",
