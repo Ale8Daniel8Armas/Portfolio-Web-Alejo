@@ -19,7 +19,8 @@ export function Navbar() {
   const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    const newLang = i18n.language.startsWith('es') ? 'en' : 'es';
+    const currentLang = i18n.language || 'es';
+    const newLang = currentLang.startsWith('es') ? 'en' : 'es';
     i18n.changeLanguage(newLang);
   };
 
@@ -141,7 +142,7 @@ export function Navbar() {
             aria-label="Cambiar idioma"
             className="flex h-9 items-center justify-center rounded-lg border border-border px-3 text-xs font-semibold tracking-wide text-muted-foreground transition-colors hover:border-brand hover:text-brand"
           >
-            {i18n.language?.startsWith('es') ? 'EN' : 'ES'}
+            {(i18n.language || 'es').startsWith('es') ? 'EN' : 'ES'}
           </button>
         </div>
       </nav>

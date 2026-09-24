@@ -1,4 +1,6 @@
-import i18n from 'i18next';
+import i18next from 'i18next';
+
+const i18n = i18next.createInstance();
 import { initReactI18next } from 'react-i18next';
 
 import project1 from "@/assets/CYBHA-APP.jpg";
