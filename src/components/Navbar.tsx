@@ -95,9 +95,9 @@ export function Navbar() {
         <a
           href="#inicio"
           onClick={(e) => handleLinkClick(e, "#inicio")}
-          className="shrink-0 transition-opacity hover:opacity-80"
+          className="flex min-w-0 shrink transition-opacity hover:opacity-80"
         >
-          <img src={logo} alt="Logo" className="h-9 w-auto object-contain sm:h-12" />
+          <img src={logo} alt="Logo" className="h-9 w-auto max-w-[130px] sm:max-w-none object-contain sm:h-12" />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -125,7 +125,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <a
             href="https://github.com/Ale8Daniel8Armas"
             target="_blank"
