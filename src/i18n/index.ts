@@ -310,8 +310,11 @@ const resources = {
     }
 };
 
+if (typeof window !== 'undefined') {
+    i18n.use(LanguageDetector);
+}
+
 i18n
-    .use(LanguageDetector)
     .use(initReactI18next)
     .init({
         resources,
