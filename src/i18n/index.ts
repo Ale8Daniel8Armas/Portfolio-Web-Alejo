@@ -309,33 +309,16 @@ const resources = {
     }
 };
 
-
-i18n.use(initReactI18next);
-
-for (const [lng, namespaces] of Object.entries(resources)) {
-    for (const [ns, translations] of Object.entries(namespaces as Record<string, unknown>)) {
-        i18n.addResourceBundle(lng, ns, translations);
-    }
-}
-
-i18n.init({
-    fallbackLng: 'es',
-    lng: 'es',
-    interpolation: {
-        escapeValue: false
-    }
-});
-
-if (typeof window !== 'undefined') {
-    import('i18next-browser-languagedetector').then((mod) => {
-        const LanguageDetector = mod.default;
-        i18n.use(LanguageDetector).init({
-            detection: {
-                order: ['localStorage', 'navigator'],
-                caches: ['localStorage'],
-            },
-        });
-    });
-}
+i18n
+    .use(initReactI18next)
+    .init({
+        resources,
+        fallbackLng: 'es',
+        lng: 'es',
+        initImmediate: false,
+        interpolation: {
+            escapeValue: false
+        }
+    } as Parameters<typeof i18n.init>[0]);
 
 export default i18n;
