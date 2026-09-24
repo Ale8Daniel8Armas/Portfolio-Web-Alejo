@@ -23,7 +23,6 @@ export function Projects() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        {/* Encabezado */}
         <div className="flex items-center gap-3">
           <span className="flex size-10 items-center justify-center rounded-xl bg-brand/15 text-brand shadow-[0_0_20px_-4px_var(--color-brand)]">
             <Github className="size-5" strokeWidth={2} />
@@ -33,7 +32,6 @@ export function Projects() {
           </h2>
         </div>
 
-        {/* Cards */}
         <div className="mt-12 grid gap-6">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />

@@ -11,7 +11,6 @@ export function TechStack() {
       id="tecnologias"
       className="relative overflow-hidden bg-tech-section py-20 text-tech-foreground sm:py-18"
     >
-      {/* Color de fondo profundo — solo en modo claro */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 dark:hidden"

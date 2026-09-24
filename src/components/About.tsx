@@ -58,12 +58,10 @@ export function About() {
               </div>
             </div>
 
-            {/* Profile Info */}
             <div className="mt-4 text-center">
               <h3 className="text-2xl font-bold text-foreground">Daniel Armas</h3>
             </div>
 
-            {/* Datos de Contacto (Inner Container) */}
             <div className="mt-8 rounded-3xl bg-[#F9F9F9] dark:bg-[#1A1A1A] p-5 sm:p-6 border border-black/5 dark:border-white/5 shadow-sm">
               <dl className="space-y-5">
                 {info.map((item) => (

@@ -15,7 +15,6 @@ export function Contact() {
       className="bg-contact py-20 text-contact-foreground sm:py-16"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        {/* Encabezado */}
         <div className="flex items-center justify-center gap-3">
           <span className="flex size-10 items-center justify-center rounded-xl bg-brand/15 text-brand shadow-[0_0_20px_-4px_var(--color-brand)]">
             <Send className="size-5" strokeWidth={2} />
@@ -25,7 +24,6 @@ export function Contact() {
           </h2>
         </div>
 
-        {/* Cards */}
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-contact-card-border shadow-[0_10px_40px_-25px_oklch(0_0_0/0.4)] lg:aspect-auto">
             <img
@@ -44,7 +42,6 @@ export function Contact() {
               {t('contact.description')}
             </p>
 
-            {/* Botones */}
             <div className="mt-8 flex w-full max-w-md flex-col gap-3">
               <a
                 href={LINKEDIN_URL}
@@ -67,7 +64,6 @@ export function Contact() {
               </a>
             </div>
 
-            {/* Pill de email */}
             <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-background px-5 py-2.5 text-sm shadow-[0_6px_20px_-12px_oklch(0_0_0/0.35)] ring-1 ring-inset ring-contact-card-border">
               <span className="font-semibold text-brand">{t('contact.emailLabel')}</span>
               <a
@@ -78,7 +74,6 @@ export function Contact() {
               </a>
             </div>
 
-            {/* Info adicional */}
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-contact-foreground/60">
               <span className="inline-flex items-center gap-1.5">
                 <MapPin className="size-3.5" strokeWidth={1.75} />

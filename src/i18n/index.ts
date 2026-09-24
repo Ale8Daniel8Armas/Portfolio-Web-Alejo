@@ -1,6 +1,5 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 import project1 from "@/assets/CYBHA-APP.jpg";
 import project2 from "@/assets/Alinambi-PORT.jpeg";
@@ -310,20 +309,33 @@ const resources = {
     }
 };
 
-if (typeof window !== 'undefined') {
-    i18n.use(LanguageDetector);
+
+i18n.use(initReactI18next);
+
+for (const [lng, namespaces] of Object.entries(resources)) {
+    for (const [ns, translations] of Object.entries(namespaces as Record<string, unknown>)) {
+        i18n.addResourceBundle(lng, ns, translations);
+    }
 }
 
-i18n
-    .use(initReactI18next)
-    .init({
-        resources,
-        fallbackLng: 'es',
-        lng: 'es',
-        initImmediate: false,
-        interpolation: {
-            escapeValue: false
-        }
+i18n.init({
+    fallbackLng: 'es',
+    lng: 'es',
+    interpolation: {
+        escapeValue: false
+    }
+});
+
+if (typeof window !== 'undefined') {
+    import('i18next-browser-languagedetector').then((mod) => {
+        const LanguageDetector = mod.default;
+        i18n.use(LanguageDetector).init({
+            detection: {
+                order: ['localStorage', 'navigator'],
+                caches: ['localStorage'],
+            },
+        });
     });
+}
 
 export default i18n;

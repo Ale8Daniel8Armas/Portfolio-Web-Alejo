@@ -24,9 +24,7 @@ export function Hero() {
       id="inicio"
       className="relative isolate flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-hero-panel"
     >
-      {/* Fondo Móvil (Oculta la imagen de la persona y polígonos para evitar bugs visuales) */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 sm:hidden">
-        {/* Fondo modo claro */}
         <div
           className="absolute inset-0 opacity-100 transition-opacity duration-500 dark:opacity-0"
           style={{
@@ -35,7 +33,6 @@ export function Hero() {
             backgroundPosition: "center",
           }}
         />
-        {/* Fondo modo oscuro */}
         <div
           className="absolute inset-0 opacity-0 transition-opacity duration-500 dark:opacity-100"
           style={{
@@ -44,13 +41,10 @@ export function Hero() {
             backgroundPosition: "center",
           }}
         />
-        {/* Capa superpuesta para asegurar que el texto sea legible en móvil */}
         <div className="absolute inset-0 bg-hero-panel/85 dark:bg-hero-panel/80 backdrop-blur-[2px]" />
       </div>
 
-      {/* Franjas diagonales y carrusel de la persona (Solo Desktop) */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 hidden sm:block">
-        {/* Carrusel dentro del área grisácea */}
         <div
           className="absolute inset-0"
           style={{
@@ -58,7 +52,6 @@ export function Hero() {
               "polygon(27.35% 0, 100% 0, 100% 100%, 51.35% 100%)",
           }}
         >
-          {/* Contenedor angosto: limita el ancho real donde se hace el cover */}
           <div className="absolute inset-y-0 right-0 w-[30%]">
             {slides.map((src, i) => (
               <img
@@ -77,7 +70,6 @@ export function Hero() {
           <div className="absolute inset-0 bg-[#2DD4BF]/10" />
         </div>
 
-        {/* Franja izquierda: fondo que cambia según el tema */}
         <div
           className="absolute inset-0"
           style={{
@@ -85,7 +77,6 @@ export function Hero() {
               "polygon(0 0, 30% 0, 54% 100%, 0 100%)",
           }}
         >
-          {/* Fondo modo claro */}
           <div
             className="absolute inset-0 opacity-100 transition-opacity duration-500 dark:opacity-0"
             style={{
@@ -95,7 +86,6 @@ export function Hero() {
             }}
           />
 
-          {/* Fondo modo oscuro */}
           <div
             className="absolute inset-0 opacity-0 transition-opacity duration-500 dark:opacity-100"
             style={{
@@ -106,7 +96,6 @@ export function Hero() {
           />
         </div>
 
-        {/* Línea diagonal */}
         <div
           className="absolute inset-0 bg-[#2DD4BF]/35"
           style={{
@@ -115,14 +104,12 @@ export function Hero() {
           }}
         />
 
-        {/* Triangulito: también cambia según el tema */}
         <div
           className="absolute inset-0"
           style={{
             clipPath: "polygon(93% 0, 100% 0, 100% 36%)",
           }}
         >
-          {/* Fondo modo claro */}
           <div
             className="absolute inset-0 opacity-100 transition-opacity duration-500 dark:opacity-0"
             style={{
@@ -132,7 +119,6 @@ export function Hero() {
             }}
           />
 
-          {/* Fondo modo oscuro */}
           <div
             className="absolute inset-0 opacity-0 transition-opacity duration-500 dark:opacity-100"
             style={{

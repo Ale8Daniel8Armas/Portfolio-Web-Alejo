@@ -12,7 +12,6 @@ export function ProjectCard({ project }: { project: Project }) {
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-br from-brand/15 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <div className="pointer-events-none absolute inset-0 z-10 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
 
-            {/* Imagen */}
             <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto">
                 <img
                     src={project.image}
@@ -24,7 +23,6 @@ export function ProjectCard({ project }: { project: Project }) {
                 />
             </div>
 
-            {/* Contenido */}
             <div className="relative z-20 flex flex-col justify-center p-6 sm:p-7">
                 <div className="flex items-center gap-2">
                     {project.inProgress && (
@@ -47,7 +45,6 @@ export function ProjectCard({ project }: { project: Project }) {
                     {project.description}
                 </p>
 
-                {/* Etiquetas */}
                 <div className="mt-4 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                         <span
@@ -59,7 +56,6 @@ export function ProjectCard({ project }: { project: Project }) {
                     ))}
                 </div>
 
-                {/* Botones */}
                 <div className="mt-6 flex flex-wrap gap-3">
                     {project.repo && (
                         <a
