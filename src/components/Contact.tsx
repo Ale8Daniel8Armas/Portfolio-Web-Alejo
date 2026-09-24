@@ -12,19 +12,19 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="bg-contact py-20 text-contact-foreground sm:py-16"
+      className="bg-contact py-16 text-contact-foreground sm:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-center gap-3">
           <span className="flex size-10 items-center justify-center rounded-xl bg-brand/15 text-brand shadow-[0_0_20px_-4px_var(--color-brand)]">
             <Send className="size-5" strokeWidth={2} />
           </span>
-          <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-5xl">
             {t('contact.title')}
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-10 grid gap-5 sm:mt-12 sm:gap-6 lg:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-contact-card-border shadow-[0_10px_40px_-25px_oklch(0_0_0/0.4)] lg:aspect-auto">
             <img
               src={profile}
@@ -34,20 +34,20 @@ export function Contact() {
             />
           </div>
 
-          <article className="flex flex-col items-center justify-center rounded-2xl border border-contact-card-border bg-contact-card p-6 text-center shadow-[0_10px_40px_-25px_oklch(0_0_0/0.4)] sm:p-12 overflow-hidden">
-            <h3 className="text-2xl font-semibold tracking-tight text-brand sm:text-3xl">
+          <article className="flex min-w-0 flex-col items-center justify-center overflow-hidden rounded-2xl border border-contact-card-border bg-contact-card p-5 text-center shadow-[0_10px_40px_-25px_oklch(0_0_0/0.4)] sm:p-10 lg:p-12">
+            <h3 className="text-xl font-semibold tracking-tight text-brand sm:text-3xl">
               {t('contact.subtitle')}
             </h3>
-            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-contact-foreground/70">
+            <p className="mt-3 max-w-md text-[14px] leading-relaxed text-contact-foreground/70 sm:text-[15px]">
               {t('contact.description')}
             </p>
 
-            <div className="mt-8 flex w-full max-w-md flex-col gap-3">
+            <div className="mt-6 flex w-full max-w-md flex-col gap-3 sm:mt-8">
               <a
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-brand px-6 py-3.5 text-sm font-semibold text-brand-foreground transition-colors hover:opacity-90"
+                className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-brand-foreground transition-colors hover:opacity-90 sm:py-3.5"
               >
                 <Linkedin className="size-4.5" strokeWidth={2} />
                 {t('contact.linkedin')}
@@ -57,26 +57,26 @@ export function Contact() {
                 href={`https://wa.me/${PHONE}`}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-available px-6 py-3.5 text-sm font-semibold text-available-foreground transition-colors hover:opacity-90"
+                className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-available px-5 py-3 text-sm font-semibold text-available-foreground transition-colors hover:opacity-90 sm:py-3.5"
               >
                 <WhatsAppIcon className="size-4.5" />
                 {t('contact.whatsapp')}
               </a>
             </div>
 
-            <div className="mt-8 flex w-full max-w-full flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-2xl sm:rounded-full bg-background px-4 sm:px-5 py-3 sm:py-2.5 text-sm shadow-[0_6px_20px_-12px_oklch(0_0_0/0.35)] ring-1 ring-inset ring-contact-card-border overflow-hidden">
-              <span className="font-semibold text-brand shrink-0">{t('contact.emailLabel')}</span>
-              <div className="min-w-0 w-full text-center">
+            <div className="mt-6 flex w-full min-w-0 flex-col items-center justify-center gap-1 overflow-hidden rounded-xl bg-background px-3 py-3 text-sm shadow-[0_6px_20px_-12px_oklch(0_0_0/0.35)] ring-1 ring-inset ring-contact-card-border sm:mt-8 sm:flex-row sm:gap-2 sm:rounded-full sm:px-5 sm:py-2.5">
+              <span className="shrink-0 font-semibold text-brand">{t('contact.emailLabel')}</span>
+              <span className="min-w-0 max-w-full truncate text-center">
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="font-medium text-contact-foreground/80 transition-colors hover:text-contact-foreground break-all inline-block max-w-full"
+                  className="font-medium text-contact-foreground/80 transition-colors hover:text-contact-foreground"
                 >
                   {EMAIL}
                 </a>
-              </div>
+              </span>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-contact-foreground/60">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[13px] text-contact-foreground/60 sm:mt-6 sm:gap-x-6">
               <span className="inline-flex items-center gap-1.5">
                 <MapPin className="size-3.5" strokeWidth={1.75} />
                 Quito, Ecuador

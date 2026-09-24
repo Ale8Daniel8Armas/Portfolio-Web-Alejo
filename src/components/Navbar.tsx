@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Github, Moon, Sun } from "lucide-react";
+import { useEffect, useState, useCallback } from "react";
+import { Github, Moon, Sun, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/Logo-AlejoDev.png";
 import { useTranslation } from 'react-i18next';
@@ -16,6 +16,7 @@ const links = [
 export function Navbar() {
   const [active, setActive] = useState("#inicio");
   const [isDark, setIsDark] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => {
@@ -59,6 +60,15 @@ export function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   const toggleTheme = () => {
     const next = !isDark;
     setIsDark(next);
@@ -66,27 +76,28 @@ export function Navbar() {
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
-  const handleLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      setActive(href);
-    }
-  };
+  const handleLinkClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        setActive(href);
+      }
+      setMobileOpen(false);
+    },
+    [],
+  );
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur-lg">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
+      <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-10">
         <a
           href="#inicio"
           onClick={(e) => handleLinkClick(e, "#inicio")}
-          className="transition-opacity hover:opacity-80"
+          className="shrink-0 transition-opacity hover:opacity-80"
         >
-          <img src={logo} alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
+          <img src={logo} alt="Logo" className="h-9 w-auto object-contain sm:h-12" />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -120,32 +131,73 @@ export function Navbar() {
             target="_blank"
             rel="noreferrer noopener"
             aria-label="GitHub"
-            className="flex size-8 sm:size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand"
+            className="flex size-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand sm:size-9"
           >
-            <Github className="size-[18px]" strokeWidth={1.75} />
+            <Github className="size-4 sm:size-[18px]" strokeWidth={1.75} />
           </a>
           <button
             type="button"
             onClick={toggleTheme}
             aria-label="Cambiar tema"
-            className="flex size-8 sm:size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand"
+            className="flex size-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand sm:size-9"
           >
             {isDark ? (
-              <Sun className="size-[18px]" strokeWidth={1.75} />
+              <Sun className="size-4 sm:size-[18px]" strokeWidth={1.75} />
             ) : (
-              <Moon className="size-[18px]" strokeWidth={1.75} />
+              <Moon className="size-4 sm:size-[18px]" strokeWidth={1.75} />
             )}
           </button>
           <button
             type="button"
             onClick={toggleLanguage}
             aria-label="Cambiar idioma"
-            className="flex h-8 sm:h-9 items-center justify-center rounded-lg border border-border px-2.5 sm:px-3 text-xs font-semibold tracking-wide text-muted-foreground transition-colors hover:border-brand hover:text-brand"
+            className="flex h-8 items-center justify-center rounded-lg border border-border px-2 text-[11px] font-semibold tracking-wide text-muted-foreground transition-colors hover:border-brand hover:text-brand sm:h-9 sm:px-3 sm:text-xs"
           >
             {(i18n.language || 'es').startsWith('es') ? 'EN' : 'ES'}
           </button>
+
+          <button
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Abrir menú"
+            className="flex size-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand md:hidden"
+          >
+            {mobileOpen ? (
+              <X className="size-4" strokeWidth={2} />
+            ) : (
+              <Menu className="size-4" strokeWidth={2} />
+            )}
+          </button>
         </div>
       </nav>
+
+      <div
+        className={cn(
+          "fixed inset-x-0 top-14 bottom-0 z-40 bg-background/95 backdrop-blur-xl transition-all duration-300 ease-in-out md:hidden sm:top-16",
+          mobileOpen
+            ? "visible translate-y-0 opacity-100"
+            : "invisible -translate-y-4 opacity-0",
+        )}
+      >
+        <ul className="flex flex-col items-center gap-1 px-4 pt-6">
+          {links.map((link) => (
+            <li key={link.id} className="w-full">
+              <a
+                href={link.href}
+                onClick={(e) => handleLinkClick(e, link.href)}
+                className={cn(
+                  "flex w-full items-center justify-center rounded-xl px-4 py-3 text-[15px] font-medium transition-colors",
+                  active === link.href
+                    ? "bg-brand/10 text-brand"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                )}
+              >
+                {t(`nav.${link.id}`)}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }

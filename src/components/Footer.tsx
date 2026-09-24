@@ -17,17 +17,17 @@ export function Footer() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-10 lg:px-10">
-        <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
-          <div className="flex items-center gap-6">
-            <img src={logo} alt="Logo" className="h-12 w-auto" />
-            <span className="text-[14px] leading-relaxed text-white/90">
+      <div className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
+        <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
+            <img src={logo} alt="Logo" className="h-10 w-auto sm:h-12" />
+            <span className="text-[13px] leading-relaxed text-white/90 sm:text-[14px]">
               {t("footer.tagline")}
             </span>
           </div>
 
-          <div className="flex items-center gap-8 sm:items-end">
-            <span className="text-[13px] font-medium uppercase tracking-wider text-white/90">
+          <div className="flex flex-col items-center gap-2 sm:items-end sm:gap-3">
+            <span className="text-[12px] font-medium uppercase tracking-wider text-white/90 sm:text-[13px]">
               {t("footer.builtWith")}
             </span>
             <div className="flex flex-wrap items-center justify-center gap-1.5">

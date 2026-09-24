@@ -130,21 +130,21 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <div className="max-w-[30rem] py-20">
-          <p className="font-display text-lg font-medium tracking-tight text-hero-ink/70 sm:text-xl">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
+        <div className="max-w-full py-16 sm:max-w-[30rem] sm:py-20">
+          <p className="font-display text-base font-medium tracking-tight text-hero-ink/70 sm:text-xl">
             {t("hero.greeting")}
           </p>
 
-          <h1 className="mt-2 font-display text-5xl font-bold leading-[1.05] tracking-tight text-hero-ink sm:text-6xl">
+          <h1 className="mt-2 font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight text-hero-ink sm:text-6xl">
             Daniel Armas
           </h1>
 
-          <p className="mt-4 max-w-sm text-lg leading-snug text-hero-ink/80 sm:text-xl">
+          <p className="mt-4 max-w-sm text-base leading-snug text-hero-ink/80 sm:text-xl">
             {t("hero.role")}
           </p>
 
-          <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-available px-3.5 py-1.5 text-[13px] font-medium text-available-foreground">
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-available px-3.5 py-1.5 text-[13px] font-medium text-available-foreground sm:mt-8">
             <span className="relative flex size-2">
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-available-foreground/50" />
               <span className="relative inline-flex size-2 rounded-full bg-available-foreground" />
@@ -153,10 +153,10 @@ export function Hero() {
             {t("hero.available")}
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
             <a
               href="#contacto"
-              className="inline-flex items-center gap-2 rounded-lg bg-hero-ink px-6 py-3 text-sm font-semibold text-hero-panel transition-colors hover:bg-hero-ink/85"
+              className="inline-flex items-center gap-2 rounded-lg bg-hero-ink px-5 py-2.5 text-sm font-semibold text-hero-panel transition-colors hover:bg-hero-ink/85 sm:px-6 sm:py-3"
             >
               {t("hero.hire_me")}
               <ArrowRight className="size-4" strokeWidth={2} />
@@ -165,7 +165,7 @@ export function Hero() {
             <a
               href="/ArmasDaniel_CV.pdf"
               download="Daniel_Armas_CV.pdf"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-hero-ink/15 bg-hero-ink/5 px-6 py-3 text-sm font-semibold text-hero-ink transition-colors hover:bg-hero-ink/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-hero-ink/15 bg-hero-ink/5 px-5 py-2.5 text-sm font-semibold text-hero-ink transition-colors hover:bg-hero-ink/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 sm:px-6 sm:py-3"
             >
               <Download className="size-4" strokeWidth={2} />
               {t('hero.download_cv')}
