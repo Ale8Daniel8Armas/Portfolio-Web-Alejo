@@ -2,10 +2,10 @@ import { r as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { i as getI18n, n as ReportNamespaces, r as getDefaults, t as I18nContext } from "./context-7ZoFrWIn.mjs";
 import { g as require_shim } from "../_libs/@tanstack/react-router+[...].mjs";
-import { _ as ArrowUpRight, a as Moon, c as Hourglass, d as Github, f as Download, g as Bot, h as Briefcase, i as Phone, l as GraduationCap, m as Check, n as Sun, o as MapPin, p as Cpu, r as Send, s as Linkedin, t as TestTubeDiagonal, u as Globe, v as ArrowRight } from "../_libs/lucide-react.mjs";
+import { _ as Briefcase, a as Phone, b as ArrowRight, c as MapPin, d as GraduationCap, f as Globe, g as Check, h as Cpu, i as Send, l as Linkedin, m as Download, n as TestTubeDiagonal, o as Moon, p as Github, r as Sun, s as Menu, t as X, u as Hourglass, v as Bot, y as ArrowUpRight } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-C3mwFvwI.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-D3dJocui.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var import_shim = require_shim();
@@ -247,6 +247,7 @@ var links = [
 function Navbar() {
 	const [active, setActive] = (0, import_react.useState)("#inicio");
 	const [isDark, setIsDark] = (0, import_react.useState)(false);
+	const [mobileOpen, setMobileOpen] = (0, import_react.useState)(false);
 	const { t, i18n } = useTranslation();
 	const toggleLanguage = () => {
 		const newLang = (i18n.language || "es").startsWith("es") ? "en" : "es";
@@ -273,13 +274,20 @@ function Navbar() {
 		sections.forEach((section) => observer.observe(section));
 		return () => observer.disconnect();
 	}, []);
+	(0, import_react.useEffect)(() => {
+		if (mobileOpen) document.body.style.overflow = "hidden";
+		else document.body.style.overflow = "";
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [mobileOpen]);
 	const toggleTheme = () => {
 		const next = !isDark;
 		setIsDark(next);
 		document.documentElement.classList.toggle("dark", next);
 		localStorage.setItem("theme", next ? "dark" : "light");
 	};
-	const handleLinkClick = (e, href) => {
+	const handleLinkClick = (0, import_react.useCallback)((e, href) => {
 		e.preventDefault();
 		const target = document.querySelector(href);
 		if (target) {
@@ -289,20 +297,21 @@ function Navbar() {
 			});
 			setActive(href);
 		}
-	};
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("header", {
+		setMobileOpen(false);
+	}, []);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
 		className: "fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur-lg",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-			className: "mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-10",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+			className: "mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-10",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 					href: "#inicio",
 					onClick: (e) => handleLinkClick(e, "#inicio"),
-					className: "transition-opacity hover:opacity-80",
+					className: "shrink-0 transition-opacity hover:opacity-80",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: Logo_AlejoDev_default,
 						alt: "Logo",
-						className: "h-12 w-auto"
+						className: "h-9 w-auto object-contain sm:h-12"
 					})
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
@@ -315,16 +324,16 @@ function Navbar() {
 					}) }, link.id))
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-2",
+					className: "flex items-center gap-1.5 sm:gap-2",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 							href: "https://github.com/Ale8Daniel8Armas",
 							target: "_blank",
 							rel: "noreferrer noopener",
 							"aria-label": "GitHub",
-							className: "flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand",
+							className: "flex size-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand sm:size-9",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Github, {
-								className: "size-[18px]",
+								className: "size-4 sm:size-[18px]",
 								strokeWidth: 1.75
 							})
 						}),
@@ -332,12 +341,12 @@ function Navbar() {
 							type: "button",
 							onClick: toggleTheme,
 							"aria-label": "Cambiar tema",
-							className: "flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand",
+							className: "flex size-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand sm:size-9",
 							children: isDark ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sun, {
-								className: "size-[18px]",
+								className: "size-4 sm:size-[18px]",
 								strokeWidth: 1.75
 							}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Moon, {
-								className: "size-[18px]",
+								className: "size-4 sm:size-[18px]",
 								strokeWidth: 1.75
 							})
 						}),
@@ -345,13 +354,40 @@ function Navbar() {
 							type: "button",
 							onClick: toggleLanguage,
 							"aria-label": "Cambiar idioma",
-							className: "flex h-9 items-center justify-center rounded-lg border border-border px-3 text-xs font-semibold tracking-wide text-muted-foreground transition-colors hover:border-brand hover:text-brand",
+							className: "flex h-8 items-center justify-center rounded-lg border border-border px-2 text-[11px] font-semibold tracking-wide text-muted-foreground transition-colors hover:border-brand hover:text-brand sm:h-9 sm:px-3 sm:text-xs",
 							children: (i18n.language || "es").startsWith("es") ? "EN" : "ES"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type: "button",
+							onClick: () => setMobileOpen((v) => !v),
+							"aria-label": "Abrir menú",
+							className: "flex size-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand md:hidden",
+							children: mobileOpen ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, {
+								className: "size-4",
+								strokeWidth: 2
+							}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, {
+								className: "size-4",
+								strokeWidth: 2
+							})
 						})
 					]
 				})
 			]
-		})
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: cn("fixed inset-x-0 top-14 bottom-0 z-40 bg-background/95 backdrop-blur-xl transition-all duration-300 ease-in-out md:hidden sm:top-16", mobileOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-4 opacity-0"),
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+				className: "flex flex-col items-center gap-1 px-4 pt-6",
+				children: links.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
+					className: "w-full",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: link.href,
+						onClick: (e) => handleLinkClick(e, link.href),
+						className: cn("flex w-full items-center justify-center rounded-xl px-4 py-3 text-[15px] font-medium transition-colors", active === link.href ? "bg-brand/10 text-brand" : "text-muted-foreground hover:bg-muted hover:text-foreground"),
+						children: t(`nav.${link.id}`)
+					})
+				}, link.id))
+			})
+		})]
 	});
 }
 var foto_portada_default = "/assets/foto-portada-P1H414TL.png";
@@ -459,42 +495,42 @@ function Hero() {
 				]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mx-auto w-full max-w-7xl px-6 lg:px-10",
+				className: "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "max-w-[30rem] py-20",
+					className: "max-w-full py-16 sm:max-w-[30rem] sm:py-20",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "font-display text-lg font-medium tracking-tight text-hero-ink/70 sm:text-xl",
+							className: "font-display text-base font-medium tracking-tight text-hero-ink/70 sm:text-xl",
 							children: t("hero.greeting")
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-							className: "mt-2 font-display text-5xl font-bold leading-[1.05] tracking-tight text-hero-ink sm:text-6xl",
+							className: "mt-2 font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight text-hero-ink sm:text-6xl",
 							children: "Daniel Armas"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-4 max-w-sm text-lg leading-snug text-hero-ink/80 sm:text-xl",
+							className: "mt-4 max-w-sm text-base leading-snug text-hero-ink/80 sm:text-xl",
 							children: t("hero.role")
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "mt-8 inline-flex items-center gap-2 rounded-full bg-available px-3.5 py-1.5 text-[13px] font-medium text-available-foreground",
+							className: "mt-6 inline-flex items-center gap-2 rounded-full bg-available px-3.5 py-1.5 text-[13px] font-medium text-available-foreground sm:mt-8",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 								className: "relative flex size-2",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute inline-flex size-full animate-ping rounded-full bg-available-foreground/50" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "relative inline-flex size-2 rounded-full bg-available-foreground" })]
 							}), t("hero.available")]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "mt-8 flex flex-wrap gap-3",
+							className: "mt-6 flex flex-wrap gap-3 sm:mt-8",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 								href: "#contacto",
-								className: "inline-flex items-center gap-2 rounded-lg bg-hero-ink px-6 py-3 text-sm font-semibold text-hero-panel transition-colors hover:bg-hero-ink/85",
+								className: "inline-flex items-center gap-2 rounded-lg bg-hero-ink px-5 py-2.5 text-sm font-semibold text-hero-panel transition-colors hover:bg-hero-ink/85 sm:px-6 sm:py-3",
 								children: [t("hero.hire_me"), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
 									className: "size-4",
 									strokeWidth: 2
 								})]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								href: "../public/ArmasDaniel_CV.pdf",
+								href: "/ArmasDaniel_CV.pdf",
 								download: "Daniel_Armas_CV.pdf",
-								className: "inline-flex items-center justify-center gap-2 rounded-xl border border-hero-ink/15 bg-hero-ink/5 px-6 py-3 text-sm font-semibold text-hero-ink transition-colors hover:bg-hero-ink/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10",
+								className: "inline-flex items-center justify-center gap-2 rounded-xl border border-hero-ink/15 bg-hero-ink/5 px-5 py-2.5 text-sm font-semibold text-hero-ink transition-colors hover:bg-hero-ink/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 sm:px-6 sm:py-3",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Download, {
 									className: "size-4",
 									strokeWidth: 2
@@ -533,10 +569,10 @@ function About() {
 		id: "perfil",
 		className: "bg-about py-20 text-about-foreground sm:py-28",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-10",
+			className: "mx-auto grid max-w-7xl gap-10 px-4 sm:gap-14 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-10",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
-					className: "mt-3 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl",
+					className: "mt-3 font-display text-3xl font-semibold leading-tight tracking-tight sm:text-5xl",
 					children: [
 						t("about.title"),
 						" ",
@@ -668,7 +704,7 @@ function Experience() {
 			className: "pointer-events-none absolute inset-0 dark:hidden",
 			style: { backgroundColor: "oklch(0.35 0.08 230)" }
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "relative mx-auto max-w-7xl px-6 lg:px-10",
+			className: "relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center gap-3",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -678,7 +714,7 @@ function Experience() {
 						strokeWidth: 2
 					})
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-					className: "font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl",
+					className: "font-display text-3xl font-semibold tracking-tight text-white sm:text-5xl",
 					children: t("experience.title")
 				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -815,7 +851,7 @@ function Projects() {
 			className: "pointer-events-none absolute inset-0 dark:hidden",
 			style: { backgroundImage: "radial-gradient(ellipse 90% 40% at 50% 0%, oklch(0.85 0.12 230 / 0.18), transparent), radial-gradient(ellipse 90% 40% at 50% 100%, oklch(0.85 0.12 230 / 0.18), transparent)" }
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "relative mx-auto max-w-7xl px-6 lg:px-10",
+			className: "relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center gap-3",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -825,7 +861,7 @@ function Projects() {
 						strokeWidth: 2
 					})
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-					className: "font-display text-4xl font-semibold tracking-tight sm:text-5xl",
+					className: "font-display text-3xl font-semibold tracking-tight sm:text-5xl",
 					children: t("projects.title")
 				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -1101,7 +1137,7 @@ function TechStack() {
 			className: "pointer-events-none absolute inset-0 dark:hidden",
 			style: { backgroundColor: "oklch(0.35 0.08 230)" }
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "relative mx-auto max-w-7xl px-6 lg:px-10",
+			className: "relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center justify-center gap-3",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -1111,7 +1147,7 @@ function TechStack() {
 						strokeWidth: 2
 					})
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-					className: "font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl",
+					className: "font-display text-3xl font-semibold tracking-tight text-white sm:text-5xl",
 					children: t("techStack.title")
 				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -1129,9 +1165,9 @@ function Contact() {
 	const { t } = useTranslation();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "contacto",
-		className: "bg-contact py-20 text-contact-foreground sm:py-16",
+		className: "bg-contact py-16 text-contact-foreground sm:py-20",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mx-auto max-w-7xl px-6 lg:px-10",
+			className: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-10",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center justify-center gap-3",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -1141,11 +1177,11 @@ function Contact() {
 						strokeWidth: 2
 					})
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-					className: "font-display text-4xl font-semibold tracking-tight sm:text-5xl",
+					className: "font-display text-3xl font-semibold tracking-tight sm:text-5xl",
 					children: t("contact.title")
 				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "mt-12 grid gap-6 lg:grid-cols-2",
+				className: "mt-10 grid gap-5 sm:mt-12 sm:gap-6 lg:grid-cols-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "relative aspect-[4/3] overflow-hidden rounded-2xl border border-contact-card-border shadow-[0_10px_40px_-25px_oklch(0_0_0/0.4)] lg:aspect-auto",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
@@ -1155,23 +1191,23 @@ function Contact() {
 						className: "size-full object-cover object-center"
 					})
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-					className: "flex flex-col items-center justify-center rounded-2xl border border-contact-card-border bg-contact-card p-8 text-center shadow-[0_10px_40px_-25px_oklch(0_0_0/0.4)] sm:p-12",
+					className: "flex min-w-0 flex-col items-center justify-center overflow-hidden rounded-2xl border border-contact-card-border bg-contact-card p-5 text-center shadow-[0_10px_40px_-25px_oklch(0_0_0/0.4)] sm:p-10 lg:p-12",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "text-2xl font-semibold tracking-tight text-brand sm:text-3xl",
+							className: "text-xl font-semibold tracking-tight text-brand sm:text-3xl",
 							children: t("contact.subtitle")
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-3 max-w-md text-[15px] leading-relaxed text-contact-foreground/70",
+							className: "mt-3 max-w-md text-[14px] leading-relaxed text-contact-foreground/70 sm:text-[15px]",
 							children: t("contact.description")
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "mt-8 flex w-full max-w-md flex-col gap-3",
+							className: "mt-6 flex w-full max-w-md flex-col gap-3 sm:mt-8",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 								href: LINKEDIN_URL,
 								target: "_blank",
 								rel: "noreferrer noopener",
-								className: "inline-flex items-center justify-center gap-2.5 rounded-lg bg-brand px-6 py-3.5 text-sm font-semibold text-brand-foreground transition-colors hover:opacity-90",
+								className: "inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-brand-foreground transition-colors hover:opacity-90 sm:py-3.5",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Linkedin, {
 									className: "size-4.5",
 									strokeWidth: 2
@@ -1180,23 +1216,26 @@ function Contact() {
 								href: `https://wa.me/${PHONE}`,
 								target: "_blank",
 								rel: "noreferrer noopener",
-								className: "inline-flex items-center justify-center gap-2.5 rounded-lg bg-available px-6 py-3.5 text-sm font-semibold text-available-foreground transition-colors hover:opacity-90",
+								className: "inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-available px-5 py-3 text-sm font-semibold text-available-foreground transition-colors hover:opacity-90 sm:py-3.5",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(WhatsAppIcon, { className: "size-4.5" }), t("contact.whatsapp")]
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "mt-8 inline-flex items-center gap-2 rounded-full bg-background px-5 py-2.5 text-sm shadow-[0_6px_20px_-12px_oklch(0_0_0/0.35)] ring-1 ring-inset ring-contact-card-border",
+							className: "mt-6 flex w-full min-w-0 flex-col items-center justify-center gap-1 overflow-hidden rounded-xl bg-background px-3 py-3 text-sm shadow-[0_6px_20px_-12px_oklch(0_0_0/0.35)] ring-1 ring-inset ring-contact-card-border sm:mt-8 sm:flex-row sm:gap-2 sm:rounded-full sm:px-5 sm:py-2.5",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "font-semibold text-brand",
+								className: "shrink-0 font-semibold text-brand",
 								children: t("contact.emailLabel")
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-								href: `mailto:${EMAIL}`,
-								className: "font-medium text-contact-foreground/80 transition-colors hover:text-contact-foreground",
-								children: EMAIL
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "min-w-0 max-w-full truncate text-center",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: `mailto:${EMAIL}`,
+									className: "font-medium text-contact-foreground/80 transition-colors hover:text-contact-foreground",
+									children: EMAIL
+								})
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-contact-foreground/60",
+							className: "mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[13px] text-contact-foreground/60 sm:mt-6 sm:gap-x-6",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 								className: "inline-flex items-center gap-1.5",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, {
@@ -1242,23 +1281,23 @@ function Footer() {
 			className: "pointer-events-none absolute inset-0 dark:hidden",
 			style: { backgroundColor: "oklch(0.35 0.08 230)" }
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			className: "relative mx-auto max-w-7xl px-6 py-10 lg:px-10",
+			className: "relative mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left",
+				className: "flex flex-col items-center gap-5 text-center sm:flex-row sm:justify-between sm:text-left",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-6",
+					className: "flex flex-col items-center gap-3 sm:flex-row sm:gap-6",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: Logo_AlejoDev_default,
 						alt: "Logo",
-						className: "h-12 w-auto"
+						className: "h-10 w-auto sm:h-12"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[14px] leading-relaxed text-white/90",
+						className: "text-[13px] leading-relaxed text-white/90 sm:text-[14px]",
 						children: t("footer.tagline")
 					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-8 sm:items-end",
+					className: "flex flex-col items-center gap-2 sm:items-end sm:gap-3",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[13px] font-medium uppercase tracking-wider text-white/90",
+						className: "text-[12px] font-medium uppercase tracking-wider text-white/90 sm:text-[13px]",
 						children: t("footer.builtWith")
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "flex flex-wrap items-center justify-center gap-1.5",
@@ -1278,7 +1317,7 @@ function Index() {
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navbar, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-				className: "pt-16",
+				className: "pt-14 sm:pt-16",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {}),

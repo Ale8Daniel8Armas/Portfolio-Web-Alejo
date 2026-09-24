@@ -415,6 +415,26 @@ var MapPin = createLucideIcon("map-pin", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Menu = createLucideIcon("menu", [
+	["path", {
+		d: "M4 5h16",
+		key: "1tepv9"
+	}],
+	["path", {
+		d: "M4 12h16",
+		key: "1lakjw"
+	}],
+	["path", {
+		d: "M4 19h16",
+		key: "1djgab"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Moon = createLucideIcon("moon", [["path", {
 	d: "M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401",
 	key: "kfwtm"
@@ -508,5 +528,18 @@ var TestTubeDiagonal = createLucideIcon("test-tube-diagonal", [
 		key: "1cjfip"
 	}]
 ]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var X = createLucideIcon("x", [["path", {
+	d: "M18 6 6 18",
+	key: "1bl5f8"
+}], ["path", {
+	d: "m6 6 12 12",
+	key: "d8bk6v"
+}]]);
 //#endregion
-export { ArrowUpRight as _, Moon as a, Hourglass as c, Github as d, Download as f, Bot as g, Briefcase as h, Phone as i, GraduationCap as l, Check as m, Sun as n, MapPin as o, Cpu as p, Send as r, Linkedin as s, TestTubeDiagonal as t, Globe as u, ArrowRight as v };
+export { Briefcase as _, Phone as a, ArrowRight as b, MapPin as c, GraduationCap as d, Globe as f, Check as g, Cpu as h, Send as i, Linkedin as l, Download as m, TestTubeDiagonal as n, Moon as o, Github as p, Sun as r, Menu as s, X as t, Hourglass as u, Bot as v, ArrowUpRight as y };

@@ -228,5 +228,33 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 639px) {
+  section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  section > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  article {
+    overflow: hidden;
+    max-width: 100%;
   }
 }

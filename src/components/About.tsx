@@ -20,9 +20,9 @@ export function About() {
 
   return (
     <section id="perfil" className="bg-about py-20 text-about-foreground sm:py-28">
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:gap-14 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-10">
         <div>
-          <h2 className="mt-3 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
             {t("about.title")} <span className="text-highlight">{t("about.highlight")}</span>
           </h2>
           <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-about-foreground/100">

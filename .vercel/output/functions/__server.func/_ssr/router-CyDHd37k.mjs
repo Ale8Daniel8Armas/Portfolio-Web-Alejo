@@ -4,7 +4,7 @@ import { a as setDefaults, o as setI18n, t as I18nContext } from "./context-7ZoF
 import { _ as useRouter, c as HeadContent, d as Outlet, f as lazyRouteComponent, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as instance } from "../_libs/i18next.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BllCJh08.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CyDHd37k.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var initReactI18next = {
@@ -404,7 +404,7 @@ i18n.use(initReactI18next).init({
 	initImmediate: false,
 	interpolation: { escapeValue: false }
 });
-var styles_default = "/assets/styles-CCHKG-kL.css";
+var styles_default = "/assets/styles-BTjPneVa.css";
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "flex min-h-screen items-center justify-center bg-background px-4",
@@ -538,7 +538,10 @@ var Route$1 = createRootRouteWithContext()({
 function RootShell({ children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
 		lang: "en",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", {
+			className: "overflow-x-hidden",
+			children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})]
+		})]
 	});
 }
 function RootComponent() {
@@ -551,7 +554,7 @@ function RootComponent() {
 		})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-C3mwFvwI.mjs");
+var $$splitComponentImporter = () => import("./routes-D3dJocui.mjs");
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({
 	head: () => ({ meta: [
 		{ title: "AlejoDev88 — Portfolio Web" },

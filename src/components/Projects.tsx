@@ -22,12 +22,12 @@ export function Projects() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="flex items-center gap-3">
           <span className="flex size-10 items-center justify-center rounded-xl bg-brand/15 text-brand shadow-[0_0_20px_-4px_var(--color-brand)]">
             <Github className="size-5" strokeWidth={2} />
           </span>
-          <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-5xl">
             {t("projects.title")}
           </h2>
         </div>
