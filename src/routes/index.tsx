@@ -7,7 +7,6 @@ import { Projects } from "@/components/Projects";
 import { TechStack } from "@/components/TechStack";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import '../i18n';
 
 export const Route = createFileRoute("/")({
   head: () => ({
