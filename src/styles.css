@@ -248,11 +248,6 @@
     padding-right: 0 !important;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
   article {
     overflow: hidden;
     max-width: 100%;
