@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { Github, Moon, Sun, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/Logo-AlejoDev.png";
+import logo from "@/assets/Logo-AlejoDev.svg";
 import { useTranslation } from 'react-i18next';
 
 const links = [
