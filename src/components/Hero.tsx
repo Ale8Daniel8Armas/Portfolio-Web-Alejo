@@ -163,7 +163,7 @@ export function Hero() {
             </a>
 
             <a
-              href="../public/ArmasDaniel_CV.pdf"
+              href="/ArmasDaniel_CV.pdf"
               download="Daniel_Armas_CV.pdf"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-hero-ink/15 bg-hero-ink/5 px-6 py-3 text-sm font-semibold text-hero-ink transition-colors hover:bg-hero-ink/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
             >
