@@ -1,4 +1,4 @@
-import logo from "@/assets/Logo-AlejoDev.png";
+import logo from "@/assets/Logo-AlejoDev.svg";
 import { useTranslation } from "react-i18next";
 
 const techs = ["React", "TypeScript", "TailwindCSS", "Vite"];
