@@ -136,6 +136,7 @@ const resources = {
                         description: "Aplicación inmersiva de realidad virtual orientada a la exploración de referencias geográficas mediante entornos 3D de múltiples salas con enfoque en la educación asistida sobre las regiones del Ecuador.",
                         tags: ["C#", "Unity", "Blender", "Realidad Virtual", "POO"],
                         image: project6,
+                        repo: "https://github.com/Ale8Daniel8Armas/ECUREGIONES_VR",
                         demo: "#",
                     },
                     {
