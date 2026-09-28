@@ -18,7 +18,7 @@ export type Project = {
     tags: string[];
     image: string;
     repo?: string;
-    demo: string;
+    demo?: string;
 };
 
 const resources = {
