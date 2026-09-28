@@ -68,13 +68,17 @@ export function ProjectCard({ project }: { project: Project }) {
                             {t("projects.repo")}
                         </a>
                     )}
-                    <a
-                        href={project.demo}
-                        className="inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-brand-foreground transition-colors hover:opacity-90"
-                    >
-                        {t("projects.demo")}
-                        <ArrowUpRight className="size-4" strokeWidth={2} />
-                    </a>
+                    {project.demo && project.demo !== "#" && (
+                        <a
+                            href={project.demo}
+                            className="inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-brand-foreground transition-colors hover:opacity-90"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            {t("projects.demo")}
+                            <ArrowUpRight className="size-4" strokeWidth={2} />
+                        </a>
+                    )}
                 </div>
             </div >
         </article >
