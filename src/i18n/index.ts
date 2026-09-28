@@ -101,7 +101,7 @@ const resources = {
                         tags: ["Python", "Flutter", "Dart", "ML", "TensorFlow", "MongoDB", "Android"],
                         image: project1,
                         repo: "https://github.com/Ale8Daniel8Armas/CYHBA_APP",
-                        demo: "#",
+                        /*demo: "#", */
                     },
                     {
                         id: "alinambi",
@@ -128,7 +128,7 @@ const resources = {
                         tags: ["Flutter", "Dart", "Firebase", "Android"],
                         image: project5,
                         repo: "https://github.com/Ale8Daniel8Armas/Rumba-GO-App",
-                        demo: "#",
+                        /*demo: "#", */
                     },
                     {
                         id: "ecuregiones",
@@ -137,12 +137,12 @@ const resources = {
                         tags: ["C#", "Unity", "Blender", "Realidad Virtual", "POO"],
                         image: project6,
                         repo: "https://github.com/Ale8Daniel8Armas/ECUREGIONES_VR",
-                        demo: "#",
+                        /*demo: "#", */
                     },
                     {
                         id: "fitnesspro",
                         title: "Landing Page FitnessPro EC",
-                        description: "Plataforma web realizado con WordPress y alojamiento en Hostinger. Se aplicó un metodología iterativa incremental, se gestionó el ciclo de vida completo del proyecto, desde la elicitación de requisitos hasta su implementación en producción al tratarse de un proyecto real para un cliente.",
+                        description: "Plataforma web real realizado con WordPress y alojamiento en Hostinger. Se aplicó un metodología iterativa incremental, se gestionó el ciclo de vida completo del proyecto, desde la elicitación de requisitos hasta su implementación en producción al tratarse de un proyecto real para un cliente.",
                         tags: ["JavaScript", "CSS", "HTML5", "WordPress"],
                         image: project3,
                         demo: "https://fitnessproec.com/",
