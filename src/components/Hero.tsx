@@ -8,8 +8,12 @@ import fondoDecorativoOscuro2 from "@/assets/newFondo.jpg";
 const slides = [profile];
 
 export function Hero() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [active, setActive] = useState(0);
+
+  const isEn = (i18n.language || "es").startsWith("en");
+  const cvHref = isEn ? "/ArmasDaniel_CV_En.pdf" : "/ArmasDaniel_CV.pdf";
+  const cvFileName = isEn ? "Daniel_Armas_CV_En.pdf" : "Daniel_Armas_CV.pdf";
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -163,8 +167,8 @@ export function Hero() {
             </a>
 
             <a
-              href="/ArmasDaniel_CV.pdf"
-              download="Daniel_Armas_CV.pdf"
+              href={cvHref}
+              download={cvFileName}
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-hero-ink/15 bg-hero-ink/5 px-5 py-2.5 text-sm font-semibold text-hero-ink transition-colors hover:bg-hero-ink/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 sm:px-6 sm:py-3"
             >
               <Download className="size-4" strokeWidth={2} />

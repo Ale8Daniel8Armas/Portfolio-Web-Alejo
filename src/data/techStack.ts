@@ -82,8 +82,9 @@ export const techSections: TechSection[] = [
             { name: "Docker", slug: "docker" },
             { name: "Git", slug: "git" },
             { name: "GitHub", slug: "github", invertOnDark: true },
-            { name: "Vercel", slug: "vercel", invertOnDark: true },
+            { name: "Azure", slug: "azure", source: "devicon" },
             { name: "GCP", slug: "googlecloud" },
+            { name: "Vercel", slug: "vercel", invertOnDark: true },
             { name: "Render", slug: "render", invertOnDark: true },
         ],
     },
@@ -92,6 +93,7 @@ export const techSections: TechSection[] = [
         title: "Desarrollo Móvil",
         techs: [
             { name: "Flutter", slug: "flutter" },
+            { name: "React Native", slug: "reactnative", source: "devicon" },
             { name: "Dart", slug: "dart" },
             { name: "Android Studio", slug: "androidstudio" },
         ],

@@ -5,7 +5,8 @@ function getIconUrl(tech: Tech) {
         return tech.customIcon;
     }
     if (tech.source === "devicon") {
-        return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.slug}/${tech.slug}-original.svg`;
+        const variant = tech.variant ?? "original";
+        return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.slug}/${tech.slug}-${variant}.svg`;
     }
     return `https://cdn.simpleicons.org/${tech.slug}`;
 }
