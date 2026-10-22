@@ -15,6 +15,25 @@ export function Hero() {
   const cvHref = isEn ? "/ArmasDaniel_CV_En.pdf" : "/ArmasDaniel_CV.pdf";
   const cvFileName = isEn ? "Daniel_Armas_CV_En.pdf" : "Daniel_Armas_CV.pdf";
 
+  const handleDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(cvHref);
+      if (!response.ok) throw new Error("Error fetching CV file");
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = cvFileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch {
+      window.open(cvHref, "_blank", "noopener,noreferrer");
+    }
+  };
+
   useEffect(() => {
     const id = setInterval(() => {
       setActive((i) => (i + 1) % slides.length);
@@ -169,6 +188,9 @@ export function Hero() {
             <a
               href={cvHref}
               download={cvFileName}
+              onClick={handleDownload}
+              target="_blank"
+              rel="noreferrer noopener"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-hero-ink/15 bg-hero-ink/5 px-5 py-2.5 text-sm font-semibold text-hero-ink transition-colors hover:bg-hero-ink/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 sm:px-6 sm:py-3"
             >
               <Download className="size-4" strokeWidth={2} />

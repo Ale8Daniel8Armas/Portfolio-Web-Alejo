@@ -9,7 +9,7 @@ export function TechStack() {
   return (
     <section
       id="tecnologias"
-      className="relative overflow-hidden bg-tech-section py-20 text-tech-foreground sm:py-18"
+      className="scroll-mt-20 sm:scroll-mt-24 relative overflow-hidden bg-tech-section py-20 text-tech-foreground sm:py-18"
     >
       <div
         aria-hidden="true"

@@ -3,7 +3,7 @@ import i18next from 'i18next';
 const i18n = i18next.createInstance();
 import { initReactI18next } from 'react-i18next';
 
-import project1 from "@/assets/CYBHA-APP.jpg";
+import project1 from "@/assets/cyhba.jpg";
 import project2 from "@/assets/Alinambi-PORT.jpeg";
 import project3 from "@/assets/FitnessPro-PORT.jpeg";
 import project4 from "@/assets/Multisala-PORT.jpeg";
@@ -97,7 +97,7 @@ const resources = {
                     {
                         id: "cyhba",
                         title: "CYHBA APP",
-                        description: "Aplicación móvil desarrollada con Flutter y MongoDB que utiliza inteligencia artificial (TensowFlow y Pytorch) para predecir enfermedades cardíacas asociadas al consumo de alcohol, en base a un índice de factores de riesgo, se utiliza Python para el entrenamiento del modelo.",
+                        description: "Aplicación móvil desarrollada con Flutter y MongoDB que utiliza inteligencia artificial (TensorFlow y PyTorch) para predecir enfermedades cardíacas asociadas al consumo de alcohol, en base a un índice de factores de riesgo, se utiliza Python para el entrenamiento del modelo.",
                         tags: ["Python", "Flutter", "Dart", "ML", "TensorFlow", "MongoDB", "Android"],
                         image: project1,
                         repo: "https://github.com/Ale8Daniel8Armas/CYHBA_APP",

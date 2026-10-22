@@ -234,6 +234,17 @@
 
   html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  @media (min-width: 640px) {
+    section[id] {
+      scroll-margin-top: 6rem;
+    }
   }
 }
 

@@ -12,7 +12,7 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="bg-contact py-16 text-contact-foreground sm:py-20"
+      className="scroll-mt-20 sm:scroll-mt-24 bg-contact py-16 text-contact-foreground sm:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-center gap-3">

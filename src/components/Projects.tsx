@@ -11,7 +11,7 @@ export function Projects() {
   return (
     <section
       id="proyectos"
-      className="relative overflow-hidden bg-projects py-20 text-projects-foreground sm:py-28"
+      className="scroll-mt-20 sm:scroll-mt-24 relative overflow-hidden bg-projects py-20 text-projects-foreground sm:py-28"
     >
       <div
         aria-hidden="true"

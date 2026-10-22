@@ -34,7 +34,7 @@ export function Experience() {
   return (
     <section
       id="experiencia"
-      className="relative overflow-hidden bg-experience py-20 text-experience-foreground sm:py-16"
+      className="scroll-mt-20 sm:scroll-mt-24 relative overflow-hidden bg-experience py-20 text-experience-foreground sm:py-16"
     >
       <div
         aria-hidden="true"

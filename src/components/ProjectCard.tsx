@@ -7,19 +7,19 @@ export function ProjectCard({ project }: { project: Project }) {
     return (
         <article
             key={project.title}
-            className="group relative overflow-hidden rounded-2xl border border-projects-card-border bg-projects-card shadow-[0_10px_40px_-25px_oklch(0_0_0/0.4)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/50 hover:shadow-[0_20px_50px_-20px_var(--color-brand)] sm:grid sm:grid-cols-[40%_1fr]"
+            className="group relative overflow-hidden rounded-2xl border border-projects-card-border bg-projects-card shadow-[0_10px_40px_-25px_oklch(0_0_0/0.4)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/50 hover:shadow-[0_20px_50px_-20px_var(--color-brand)] sm:grid sm:grid-cols-[42%_1fr]"
         >
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-br from-brand/15 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <div className="pointer-events-none absolute inset-0 z-10 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
 
-            <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto">
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900/10 dark:bg-slate-950/40 sm:h-full sm:min-h-[260px] sm:aspect-auto">
                 <img
                     src={project.image}
                     alt={`Vista previa de ${project.title}`}
                     loading="lazy"
                     width={800}
-                    height={600}
-                    className="size-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                    height={500}
+                    className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                 />
             </div>
 
